@@ -18,7 +18,7 @@ namespace Entidades
         public bool cancelado { get; set; }
 
         /// <summary>
-        /// Constructor de la clase carrera
+        /// Constructor default la clase carrera
         /// </summary>
         public Carrera() { }
     }
