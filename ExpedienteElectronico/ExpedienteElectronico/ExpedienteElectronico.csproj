@@ -94,7 +94,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CatEstados\WebEliminaEstado.aspx" />
     <Content Include="CatEstados\WebEstado.aspx" />
+    <Content Include="CatEstados\WebInsertaEstado.aspx" />
+    <Content Include="CatEstados\WebModificaEstado.aspx" />
     <Content Include="CatInstitutos\WebEliminarInstituto.aspx" />
     <Content Include="CatInstitutos\WebInsertarInstitucion.aspx" />
     <Content Include="CatInstitutos\WebInstitucion.aspx" />
@@ -131,12 +134,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CatEstados\WebEliminaEstado.aspx.cs">
+      <DependentUpon>WebEliminaEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatEstados\WebEliminaEstado.aspx.designer.cs">
+      <DependentUpon>WebEliminaEstado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CatEstados\WebEstado.aspx.cs">
       <DependentUpon>WebEstado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CatEstados\WebEstado.aspx.designer.cs">
       <DependentUpon>WebEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatEstados\WebInsertaEstado.aspx.cs">
+      <DependentUpon>WebInsertaEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatEstados\WebInsertaEstado.aspx.designer.cs">
+      <DependentUpon>WebInsertaEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatEstados\WebModificaEstado.aspx.cs">
+      <DependentUpon>WebModificaEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatEstados\WebModificaEstado.aspx.designer.cs">
+      <DependentUpon>WebModificaEstado.aspx</DependentUpon>
     </Compile>
     <Compile Include="CatInstitutos\WebEliminarInstituto.aspx.cs">
       <DependentUpon>WebEliminarInstituto.aspx</DependentUpon>

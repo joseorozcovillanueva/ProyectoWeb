@@ -23,7 +23,7 @@
                 <asp:BoundField DataField="FechaCreacion"  HeaderText="Fecha Creacion" >
                 <ControlStyle CssClass="table table-bordered" />
                 </asp:BoundField>
-                <asp:BoundField DataField="Fecha Modificacion"  HeaderText="Fecha Modificacion" >
+                <asp:BoundField DataField="FechaModificacion"  HeaderText="Fecha Modificacion" >
                 <ControlStyle CssClass="table table-bordered" />
                 </asp:BoundField>
                                 <asp:TemplateField HeaderStyle-ForeColor="Black"  HeaderText="Opciones">
