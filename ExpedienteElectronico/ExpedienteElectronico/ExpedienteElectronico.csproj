@@ -215,6 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CatCarreras\" />
+    <Folder Include="CatParametro\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
