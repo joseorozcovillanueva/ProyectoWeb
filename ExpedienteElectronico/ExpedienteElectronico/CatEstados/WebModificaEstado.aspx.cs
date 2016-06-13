@@ -17,8 +17,10 @@ namespace ExpedienteElectronico.CatEstados
             {
                 GridViewRow datos = (GridViewRow)Session["gvr"];
                 lblID.Text = datos.Cells[0].Text;
-                txtcNombre.Text = datos.Cells[1].Text;                
+                txtcNombre.Text = datos.Cells[1].Text;
 
+                txtcNombre.Attributes.Add("placeHolder", "Nombre del Estado");
+                txtcNombre.Focus();
             }
         }
 

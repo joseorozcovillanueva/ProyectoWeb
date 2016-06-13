@@ -13,6 +13,8 @@ namespace ExpedienteElectronico.CatEstados
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtcNombre.Attributes.Add("placeHolder", "Nombre del Estado");            
+            txtcNombre.Focus();
 
         }
         protected void btnGuardar_Click(object sender, EventArgs e)

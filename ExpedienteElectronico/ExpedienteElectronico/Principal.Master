@@ -24,8 +24,15 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="Default.aspx">Principal</a></li>
-            <li><a href="/WebInstitucion.aspx">Institución</a></li>
+            <li class="active"><a href="<%=Page.ResolveUrl("~/Default.aspx") %>">Principal</a></li>
+            <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">Catálogos
+             <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="<%=Page.ResolveUrl("~/CatInstitutos/WebInstitucion.aspx") %>">Institutos</a></li>
+                <li><a href="<%=Page.ResolveUrl("~/CatEstados/WebEstado.aspx") %>">Estados</a></li>            
+                 </ul>
+            </li>            
             <li><a href="#">Registro de Usuario</a></li>            
           </ul>
         </div><!--/.nav-collapse -->
