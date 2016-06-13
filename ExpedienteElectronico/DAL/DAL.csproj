@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSingleton.cs" />
+    <Compile Include="EstadoDao.cs" />
     <Compile Include="InstitucionDao.cs" />
+    <Compile Include="MunicipioDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

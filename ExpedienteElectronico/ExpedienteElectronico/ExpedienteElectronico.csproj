@@ -94,6 +94,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CatEstados\WebEstado.aspx" />
+    <Content Include="CatInstitutos\WebEliminarInstituto.aspx" />
+    <Content Include="CatInstitutos\WebInsertarInstitucion.aspx" />
+    <Content Include="CatInstitutos\WebInstitucion.aspx" />
+    <Content Include="CatInstitutos\WebModificaInstitucion.aspx" />
+    <Content Include="CatMunicipios\WebMunicipio.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="img\Archivo.png" />
     <Content Include="packages.config" />
@@ -125,6 +131,48 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CatEstados\WebEstado.aspx.cs">
+      <DependentUpon>WebEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatEstados\WebEstado.aspx.designer.cs">
+      <DependentUpon>WebEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatInstitutos\WebEliminarInstituto.aspx.cs">
+      <DependentUpon>WebEliminarInstituto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatInstitutos\WebEliminarInstituto.aspx.designer.cs">
+      <DependentUpon>WebEliminarInstituto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatInstitutos\WebInsertarInstitucion.aspx.cs">
+      <DependentUpon>WebInsertarInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatInstitutos\WebInsertarInstitucion.aspx.designer.cs">
+      <DependentUpon>WebInsertarInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatInstitutos\WebInstitucion.aspx.cs">
+      <DependentUpon>WebInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatInstitutos\WebInstitucion.aspx.designer.cs">
+      <DependentUpon>WebInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatInstitutos\WebModificaInstitucion.aspx.cs">
+      <DependentUpon>WebModificaInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatInstitutos\WebModificaInstitucion.aspx.designer.cs">
+      <DependentUpon>WebModificaInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatMunicipios\WebMunicipio.aspx.cs">
+      <DependentUpon>WebMunicipio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatMunicipios\WebMunicipio.aspx.designer.cs">
+      <DependentUpon>WebMunicipio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,9 +191,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CatCarreras\" />
-    <Folder Include="CatEstados\" />
-    <Folder Include="CatInstitutos\" />
-    <Folder Include="CatMunicipios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{47644efb-2ccf-4cb5-a120-7f80d417c938}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{b75e2972-0332-422c-9c35-517ba8bae600}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
