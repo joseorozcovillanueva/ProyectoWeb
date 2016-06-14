@@ -49,7 +49,7 @@ namespace ExpedienteElectronico.CatMunicipios
         protected void btnButtonNuevo_Click(object sender, EventArgs e)
         {
             Session["ID"] = lblID.Text;
-            Response.Redirect("WebInsertaMunicipio.aspx");
+            Response.Redirect(Page.ResolveUrl("WebInsertaMunicipio.aspx"));
         }
         protected void Editar(object sender, System.EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace ExpedienteElectronico.CatMunicipios
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
             Session["gvr"] = gvr;
             Session["ID"] = lblID.Text;
-            Response.Redirect("WebModificaMunicipio.aspx");
+            Response.Redirect(Page.ResolveUrl("WebModificaMunicipio.aspx"));
         }
 
         protected void Eliminar(object sender, System.EventArgs e)
