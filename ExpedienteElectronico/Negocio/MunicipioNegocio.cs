@@ -17,11 +17,11 @@ namespace Negocio
             return dao.InsertaMunicipio(_municipio);
         }
 
-        public List<Municipio> obtenerMunicipio()
+        public List<Municipio> obtenerMunicipio(int _id)
         {
             MunicipioDao dao = new MunicipioDao();
 
-            return dao.obtenerEstado();
+            return dao.obtenerEstado(_id);
         }
 
         public void modificaMunicipio(Municipio _municipio)

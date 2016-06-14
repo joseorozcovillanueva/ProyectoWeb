@@ -38,7 +38,7 @@ namespace DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<Municipio> obtenerEstado()
+        public List<Municipio> obtenerEstado(int _idEstado)
         {
             List<Municipio> list = new List<Municipio>();
 
@@ -48,6 +48,7 @@ namespace DAL
             {
                 var command = new SqlCommand("dbo.usp_ConsultaMunicipio", ConexionSingleton.abrirConexion());
                 command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@idEstado", _idEstado);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {

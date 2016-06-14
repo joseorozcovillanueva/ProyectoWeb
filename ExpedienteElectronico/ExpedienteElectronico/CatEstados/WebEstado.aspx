@@ -13,25 +13,20 @@
     <h3>Cátologo de Estados <asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
          <asp:GridView ID="GridViewEstado"  CssClass="table table-bordered" AutoGenerateColumns="False" runat="server" >
           <Columns>
-                <asp:BoundField DataField="idEstado"  HeaderText="ID" Visible="true" >
+                <asp:BoundField DataField="idEstado"  HeaderText="ID" Visible="true" HeaderStyle-Width="148px" >
                 <ControlStyle CssClass="table table-bordered" />
                 </asp:BoundField>
                 
-                <asp:BoundField DataField="Nombre"  HeaderText="Nombre Municipio" >
+                <asp:BoundField DataField="Nombre"  HeaderText="Nombre Estado" HeaderStyle-Width="548px" >
                 <ControlStyle CssClass="table table-bordered" />
                 </asp:BoundField>
-                <asp:BoundField DataField="FechaCreacion"  HeaderText="Fecha Creacion" >
-                <ControlStyle CssClass="table table-bordered" />
-                </asp:BoundField>
-                <asp:BoundField DataField="FechaModificacion"  HeaderText="Fecha Modificacion" >
-                <ControlStyle CssClass="table table-bordered" />
-                </asp:BoundField>
-                                <asp:TemplateField HeaderStyle-ForeColor="Black"  HeaderText="Opciones">
+                
+                                <asp:TemplateField HeaderStyle-ForeColor="Black"  HeaderText="Opciones" HeaderStyle-Width="348px" >
                     <ItemTemplate>
                         <asp:Button ID="btnEditar" runat="server" CssClass="btn btn-primary" Text="Editar"  
                              OnClick="Editar"
                              />
-
+                     <asp:Button ID="btnMunicipios" runat="server" Text="Municipio" CssClass="btn btn-warning" OnClick="AgrMunicipio" />
                      <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger"  OnClick="Eliminar" />
                     </ItemTemplate>
                     

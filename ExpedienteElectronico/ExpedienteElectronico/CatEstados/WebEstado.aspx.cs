@@ -54,6 +54,16 @@ namespace ExpedienteElectronico.CatEstados
             Response.Redirect("WebEliminaEstado.aspx");
 
         }
+        protected void AgrMunicipio(object sender, System.EventArgs e)
+        {
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            Session["gvr"] = gvr;
+            Response.Redirect(Page.ResolveUrl("~/CatMunicipios/WebMunicipio.aspx"));
+        }
 
         protected void btnButtonNuevo_Click(object sender, EventArgs e)
         {

@@ -10,7 +10,7 @@
     <br />
      <div class="container">
       
-    <h3>Cátologo de Municipios <asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
+    <h3>Cátologo de Municipios | Del Estado ID: <asp:Label ID="lblID" runat="server" Text="Label"></asp:Label>&nbsp;<asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
          <asp:GridView ID="GridViewMunicipio"  CssClass="table table-bordered" AutoGenerateColumns="False" runat="server" >
           <Columns>
                 <asp:BoundField DataField="idMunicipio"  HeaderText="ID" Visible="true" >

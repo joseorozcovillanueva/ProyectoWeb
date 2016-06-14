@@ -10,7 +10,7 @@
 namespace ExpedienteElectronico.CatMunicipios {
     
     
-    public partial class WebMunicipio {
+    public partial class WebInsertaMunicipio {
         
         /// <summary>
         /// Control form1.
@@ -31,21 +31,57 @@ namespace ExpedienteElectronico.CatMunicipios {
         protected global::System.Web.UI.WebControls.Label lblID;
         
         /// <summary>
-        /// Control btnButtonNuevo.
+        /// Control lblEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnButtonNuevo;
+        protected global::System.Web.UI.WebControls.Label lblEstado;
         
         /// <summary>
-        /// Control GridViewMunicipio.
+        /// Control dropListEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewMunicipio;
+        protected global::System.Web.UI.WebControls.DropDownList dropListEstado;
+        
+        /// <summary>
+        /// Control lblcNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblcNombre;
+        
+        /// <summary>
+        /// Control txtcNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtcNombre;
+        
+        /// <summary>
+        /// Control btnGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }
