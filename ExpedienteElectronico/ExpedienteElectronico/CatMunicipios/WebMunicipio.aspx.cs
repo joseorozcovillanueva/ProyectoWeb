@@ -14,6 +14,8 @@ namespace ExpedienteElectronico.CatMunicipios
         protected void Page_Load(object sender, EventArgs e)
         {
             MunicipioNegocio negocioMunicipio = new MunicipioNegocio();
+            EstadoNegocio negocioEstado = new EstadoNegocio();
+            Estado objEstado = new Estado();
 
             if (Session["ID"] == null)
             {
@@ -28,6 +30,10 @@ namespace ExpedienteElectronico.CatMunicipios
             try
             {
                 int idEstado = Convert.ToInt32(lblID.Text.ToString());
+                objEstado = negocioEstado.obtenerEstado().Find(x => x.idEstado == idEstado);
+
+                lblNombreEstado.Text = objEstado.Nombre;
+
                 GridViewMunicipio.DataSource = negocioMunicipio.obtenerMunicipio(idEstado);
                 GridViewMunicipio.DataBind();
 
@@ -42,7 +48,37 @@ namespace ExpedienteElectronico.CatMunicipios
 
         protected void btnButtonNuevo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WebInsertaEstado.aspx");
+            Session["ID"] = lblID.Text;
+            Response.Redirect("WebInsertaMunicipio.aspx");
+        }
+        protected void Editar(object sender, System.EventArgs e)
+        {
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            Session["gvr"] = gvr;
+            Session["ID"] = lblID.Text;
+            Response.Redirect("WebModificaMunicipio.aspx");
+        }
+
+        protected void Eliminar(object sender, System.EventArgs e)
+        {
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            Session["gvr"] = gvr;
+            Session["ID"] = lblID.Text;
+            //Response.Redirect("WebEliminaEstado.aspx");
+
+        }
+
+        protected void regresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Page.ResolveUrl("~/CatEstados/WebEstado.aspx"));
         }
     }
 

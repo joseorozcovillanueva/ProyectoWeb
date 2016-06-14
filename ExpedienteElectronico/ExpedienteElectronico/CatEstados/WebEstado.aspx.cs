@@ -61,7 +61,8 @@ namespace ExpedienteElectronico.CatEstados
 
             //Get the row that contains this button
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-            Session["gvr"] = gvr;
+            Session["gvr"] = gvr;            
+            Session["ID"] = gvr.Cells[0].Text;             
             Response.Redirect(Page.ResolveUrl("~/CatMunicipios/WebMunicipio.aspx"));
         }
 
