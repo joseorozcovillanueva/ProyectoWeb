@@ -10,7 +10,7 @@
     <br />
      <div class="container">
       
-    <h3>Cátologo de Instituciones <asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
+    <h3>Catálogo de Instituciones <asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
          <asp:GridView ID="GridViewInstitucion"  CssClass="table table-bordered" AutoGenerateColumns="False" runat="server" >
           <Columns>
                 <asp:BoundField DataField="IdInstitucion"  HeaderText="ID" Visible="true" >
@@ -34,7 +34,7 @@
                         <asp:Button ID="btnEditar" runat="server" CssClass="btn btn-primary" Text="Editar"  
                              OnClick="Editar"
                              />
-
+                     <asp:Button ID="btnCarreras" runat="server" Text="Carreras" CssClass="btn btn-warning" OnClick="AgrCarrera" />
                      <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger"  OnClick="Eliminar" />
                     </ItemTemplate>
                     

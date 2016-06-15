@@ -9,16 +9,17 @@ using Entidades;
 
 namespace DAL
 {
-    public class EstadoDao
+    public class ParametroDao
     {
-        public int InsertaEstado(Estado _estado)
+        public int InsertaParametro(Parametro _parametro)
         {
-            var command = new SqlCommand("dbo.usp_CreaEstado", ConexionSingleton.abrirConexion());
+            var command = new SqlCommand("dbo.usp_CreaParametro", ConexionSingleton.abrirConexion());
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@cNombre", _estado.Nombre);
-            
+            command.Parameters.AddWithValue("@cDescripcion", _parametro.cDescripcion);
+            command.Parameters.AddWithValue("@cValor", _parametro.cValor);
+
             int folio = 0;
 
             try
@@ -37,22 +38,24 @@ namespace DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<Estado> obtenerEstado()
+        public List<Parametro> obtenerParametro()
         {
-            List<Estado> list = new List<Estado>();
+            List<Parametro> list = new List<Parametro>();
 
-            Estado cat;
+            Parametro cat;
 
             try
             {
-                var command = new SqlCommand("dbo.usp_ConsultaEstado", ConexionSingleton.abrirConexion());
+                var command = new SqlCommand("dbo.usp_ConsultaParametro", ConexionSingleton.abrirConexion());
                 command.CommandType = CommandType.StoredProcedure;
+                
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    cat = new Estado();
-                    cat.idEstado = (int)reader["idEstado"];
-                    cat.Nombre = (string)reader["Nombre"];
+                    cat = new Parametro();
+                    cat.idParametro = (int)reader["idMunicipio"];
+                    cat.cDescripcion = (string)reader["cDescripcion"];
+                    cat.cValor = (string)reader["cValor"];
                     cat.FechaCreacion = (DateTime)reader["FechaCreacion"];
                     cat.FechaModificacion = (DateTime)reader["FechaModificacion"];
                     list.Add(cat);
@@ -60,25 +63,26 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                throw new Exception("SQl Error en obtener los datos de Estado" + ex.Message);
+                throw new Exception("SQl Error en obtener los datos de parametro" + ex.Message);
             }
             catch (Exception ex)
             {
-                throw new Exception("Code Error en obtener los datos de Estado" + ex.Message);
+                throw new Exception("Code Error en obtener los datos de parametro" + ex.Message);
             }
 
             ConexionSingleton.cerrarConexion();
 
             return list;
         }
-        public void modificaEstado(Estado _estado)
+        public void modificaParametro(Parametro _parametro)
         {
-            var command = new SqlCommand("SP_modificaEstado", ConexionSingleton.abrirConexion());
+            var command = new SqlCommand("SP_modificaParametro", ConexionSingleton.abrirConexion());
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@idEstado", _estado.idEstado);
-            command.Parameters.AddWithValue("@cNombre", _estado.Nombre);            
+            command.Parameters.AddWithValue("@idParametro", _parametro.idParametro);
+            command.Parameters.AddWithValue("@cDescripcion", _parametro.cDescripcion);
+            command.Parameters.AddWithValue("@cValor", _parametro.cValor);
 
             try
             {
@@ -92,13 +96,13 @@ namespace DAL
             ConexionSingleton.cerrarConexion();
         }
 
-        public void eliminaEstado(Estado _estado)
+        public void eliminaParametro(Parametro _parametro)
         {
-            var command = new SqlCommand("SP_EliminaEstado", ConexionSingleton.abrirConexion());
+            var command = new SqlCommand("SP_EliminaMunicipio", ConexionSingleton.abrirConexion());
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@idEstado", _estado.idEstado);
+            command.Parameters.AddWithValue("@idParametro", _parametro.idParametro);           
 
 
             try

@@ -69,11 +69,11 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                throw new Exception("SQl Error en obtener los datos de modelos" + ex.Message);
+                throw new Exception("SQl Error en obtener los datos de institución" + ex.Message);
             }
             catch (Exception ex)
             {
-                throw new Exception("Code Error en obtener los datos de modelos" + ex.Message);
+                throw new Exception("Code Error en obtener los datos de institución" + ex.Message);
             }
 
             ConexionSingleton.cerrarConexion();

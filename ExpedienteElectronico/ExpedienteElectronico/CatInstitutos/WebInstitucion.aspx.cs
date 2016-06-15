@@ -55,6 +55,18 @@ namespace ExpedienteElectronico.CatInstitutos
             Response.Redirect("WebEliminarInstituto.aspx");
 
         }
+
+        protected void AgrCarrera(object sender, System.EventArgs e)
+        {
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            Session["gvr"] = gvr;
+            Session["ID"] = gvr.Cells[0].Text;
+            Response.Redirect(Page.ResolveUrl("~/CatMunicipios/WebInstitucion.aspx"));
+        }
         protected void btnButtonNuevo_Click(object sender, EventArgs e)
         {
             Response.Redirect("WebInsertarInstitucion.aspx");

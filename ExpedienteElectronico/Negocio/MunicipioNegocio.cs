@@ -21,7 +21,7 @@ namespace Negocio
         {
             MunicipioDao dao = new MunicipioDao();
 
-            return dao.obtenerEstado(_id);
+            return dao.obtenerMunicipio(_id);
         }
 
         public void modificaMunicipio(Municipio _municipio)

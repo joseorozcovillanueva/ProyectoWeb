@@ -38,7 +38,7 @@ namespace DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<Municipio> obtenerEstado(int _idEstado)
+        public List<Municipio> obtenerMunicipio(int _idEstado)
         {
             List<Municipio> list = new List<Municipio>();
 
@@ -63,11 +63,11 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                throw new Exception("SQl Error en obtener los datos de modelos" + ex.Message);
+                throw new Exception("SQl Error en obtener los datos de municipio" + ex.Message);
             }
             catch (Exception ex)
             {
-                throw new Exception("Code Error en obtener los datos de modelos" + ex.Message);
+                throw new Exception("Code Error en obtener los datos de municipio" + ex.Message);
             }
 
             ConexionSingleton.cerrarConexion();

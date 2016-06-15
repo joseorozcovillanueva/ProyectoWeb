@@ -45,6 +45,7 @@
     <Compile Include="Estatus.cs" />
     <Compile Include="Institucion.cs" />
     <Compile Include="Municipio.cs" />
+    <Compile Include="Parametro.cs" />
     <Compile Include="Prestador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

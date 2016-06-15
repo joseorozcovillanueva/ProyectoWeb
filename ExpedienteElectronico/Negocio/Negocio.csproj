@@ -43,6 +43,7 @@
     <Compile Include="EstadoNegocio.cs" />
     <Compile Include="InstitucionNegocio.cs" />
     <Compile Include="MunicipioNegocio.cs" />
+    <Compile Include="ParametroNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prueba.cs" />
     <Compile Include="Prueba2.cs" />
