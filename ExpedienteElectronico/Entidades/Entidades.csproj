@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auditoria.cs" />
     <Compile Include="Carrera.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Estatus.cs" />
