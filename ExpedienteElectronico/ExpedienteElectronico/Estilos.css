@@ -1,0 +1,47 @@
+﻿body {
+}
+.Table {
+    background-color:darkgray;
+}
+.Table th {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #f2fdf2;
+    color: #990044;
+    font-family: Arial;
+    text-align: center;
+}
+.Table td {
+    background-color:darkgray;
+    border:hidden;
+}
+.TextBox {
+    font-size:xx-large;
+    font-weight:319px;
+    font-family:Calibri;
+    ForeColor="Black";
+    Width="319px";
+    background-color:darkgray;
+    text-align:right;
+}
+.txtCaptura {
+    font-size:medium;
+    font-family:'Exo 2.0';
+
+}
+.Label {
+    font-size:medium;
+    font-family:'Exo 2.0';    
+    float:right;
+    
+}
+.comboBox {
+    font-family:'Exo 2.0';    
+}
+.txtCentrado {
+    font-size:medium;
+    font-family:'Exo 2.0';
+    text-align:center;    
+    align-content:center;
+    align-self:center;
+}
