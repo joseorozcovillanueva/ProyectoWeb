@@ -60,7 +60,7 @@ namespace ExpedienteElectronico.CatMunicipios
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
             Session["gvr"] = gvr;
             Session["ID"] = lblID.Text;
-            Response.Redirect(Page.ResolveUrl("WebModificaMunicipio.aspx"));
+            Response.Redirect("WebModificaMunicipio.aspx");
         }
 
         protected void Eliminar(object sender, System.EventArgs e)

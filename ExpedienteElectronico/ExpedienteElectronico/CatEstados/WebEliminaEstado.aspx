@@ -13,7 +13,7 @@
     <h3>Confirmación de Eliminación | Estado | ID : <asp:Label ID="lblID" runat="server" Text="Label"></asp:Label></h3> 
                 
              <div class="form-group">
-             <asp:Label ID="lblcNombre"   runat="server" Text="Nombre de la Institución: "></asp:Label>
+             <asp:Label ID="lblcNombre"   runat="server" Text="Nombre del Estado: "></asp:Label>
              <asp:TextBox ID="txtcNombre" Enabled="false" CssClass="form-control" runat="server"></asp:TextBox>
              </div>         
          

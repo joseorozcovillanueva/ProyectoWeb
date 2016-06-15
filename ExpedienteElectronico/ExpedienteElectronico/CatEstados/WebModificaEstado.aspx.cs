@@ -34,7 +34,7 @@ namespace ExpedienteElectronico.CatEstados
 
 
                 objEstado.idEstado = Convert.ToInt32(lblID.Text);
-                objEstado.Nombre = txtcNombre.Text;
+                objEstado.Nombre = txtcNombre.Text.ToUpper(); ;
                 EstadoNegocio.modificaEstado(objEstado);
 
                 Response.Redirect("WebEstado.aspx");

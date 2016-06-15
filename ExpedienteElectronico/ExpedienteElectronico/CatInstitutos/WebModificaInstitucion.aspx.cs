@@ -19,6 +19,9 @@ namespace ExpedienteElectronico.CatInstitutos
                 lblID.Text = datos.Cells[0].Text;
                 txtcNombre.Text = datos.Cells[1].Text;
                 txtcDireccion.Text = datos.Cells[2].Text;
+                txtcNombre.Attributes.Add("placeHolder", "Nombre del Instituto educativo");
+                txtcDireccion.Attributes.Add("placeHolder", "Dirección del instituto educativo");
+                txtcNombre.Focus();
 
             }
         }

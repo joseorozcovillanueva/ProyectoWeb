@@ -102,6 +102,7 @@
     <Content Include="CatInstitutos\WebInsertarInstitucion.aspx" />
     <Content Include="CatInstitutos\WebInstitucion.aspx" />
     <Content Include="CatInstitutos\WebModificaInstitucion.aspx" />
+    <Content Include="CatMunicipios\WebEliminaMunicipio.aspx" />
     <Content Include="CatMunicipios\WebInsertaMunicipio.aspx" />
     <Content Include="CatMunicipios\WebModificaMunicipio.aspx" />
     <Content Include="CatMunicipios\WebMunicipio.aspx" />
@@ -191,6 +192,13 @@
     </Compile>
     <Compile Include="CatInstitutos\WebModificaInstitucion.aspx.designer.cs">
       <DependentUpon>WebModificaInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatMunicipios\WebEliminaMunicipio.aspx.cs">
+      <DependentUpon>WebEliminaMunicipio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatMunicipios\WebEliminaMunicipio.aspx.designer.cs">
+      <DependentUpon>WebEliminaMunicipio.aspx</DependentUpon>
     </Compile>
     <Compile Include="CatMunicipios\WebInsertaMunicipio.aspx.cs">
       <DependentUpon>WebInsertaMunicipio.aspx</DependentUpon>

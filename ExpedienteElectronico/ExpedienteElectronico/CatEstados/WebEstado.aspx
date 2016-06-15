@@ -1,4 +1,4 @@
-﻿<%@ Page EnableEventValidation="true" Language="C#" AutoEventWireup="true" MasterPageFile="~/Principal.Master" CodeBehind="WebEstado.aspx.cs" Inherits="ExpedienteElectronico.CatEstados.WebEstado" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Principal.Master" CodeBehind="WebEstado.aspx.cs" Inherits="ExpedienteElectronico.CatEstados.WebEstado" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    

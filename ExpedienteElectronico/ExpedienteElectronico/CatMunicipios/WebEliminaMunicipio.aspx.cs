@@ -9,11 +9,11 @@ using Negocio;
 
 namespace ExpedienteElectronico.CatMunicipios
 {
-    public partial class WebModificaMunicipio : System.Web.UI.Page
+    public partial class WebEliminaMunicipio : System.Web.UI.Page
     {
-        EstadoNegocio estadoNegocio = new EstadoNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
+            EstadoNegocio estadoNegocio = new EstadoNegocio();
 
             if (!Page.IsPostBack)
             {
@@ -25,8 +25,7 @@ namespace ExpedienteElectronico.CatMunicipios
                 lblID.Text = datos.Cells[0].Text;
                 txtcNombre.Text = datos.Cells[2].Text;
                 dropListEstado.Items.FindByValue(datos.Cells[1].Text.ToString()).Selected = true;
-                txtcNombre.Attributes.Add("placeHolder", "Nombre del Municipio");
-                txtcNombre.Focus();
+                txtcNombre.Attributes.Add("placeHolder", "Nombre del Municipio");                
             }
         }
 
@@ -40,7 +39,7 @@ namespace ExpedienteElectronico.CatMunicipios
                 objMun.idEstado = Convert.ToInt32(dropListEstado.SelectedValue.ToString());
                 objMun.Nombre = txtcNombre.Text.ToUpper();
                 Session["ID"] = Convert.ToString(objMun.idEstado);
-                municipioNegocio.modificaMunicipio(objMun);
+                municipioNegocio.eliminaMunicipio(objMun);
                 Response.Redirect(Page.ResolveUrl("~/CatMunicipios/WebMunicipio.aspx"));
             }
         }

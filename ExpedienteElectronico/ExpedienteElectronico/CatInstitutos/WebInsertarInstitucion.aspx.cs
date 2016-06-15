@@ -13,7 +13,9 @@ namespace ExpedienteElectronico.CatInstitutos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtcNombre.Attributes.Add("placeHolder", "Nombre del Instituto educativo");
+            txtcDireccion.Attributes.Add("placeHolder", "Dirección del instituto educativo");
+            txtcNombre.Focus();
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -26,6 +28,7 @@ namespace ExpedienteElectronico.CatInstitutos
             objInstitucion.Direccion = txtcDireccion.Text;
 
             institucionNegocio.insertarInstitucion(objInstitucion);
+
 
             Response.Redirect("WebInstitucion.aspx");
         }

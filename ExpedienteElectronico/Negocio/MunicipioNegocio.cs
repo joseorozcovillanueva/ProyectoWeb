@@ -31,7 +31,7 @@ namespace Negocio
             dao.modificaMunicipio(_municipio);
         }
 
-        public void eliminaEstado(Municipio _municipio)
+        public void eliminaMunicipio(Municipio _municipio)
         {
             MunicipioDao dao = new MunicipioDao();
 
