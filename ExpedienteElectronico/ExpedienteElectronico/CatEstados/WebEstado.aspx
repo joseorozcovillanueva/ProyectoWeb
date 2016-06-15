@@ -10,7 +10,7 @@
     <br />
      <div class="container">
       
-    <h3>Cátologo de Estados <asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
+    <h3>Catálogo de Estados <asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
          <asp:GridView ID="GridViewEstado"  CssClass="table table-bordered" AutoGenerateColumns="False" runat="server" >
           <Columns>
                 <asp:BoundField DataField="idEstado"  HeaderText="ID" Visible="true" HeaderStyle-Width="148px" >
