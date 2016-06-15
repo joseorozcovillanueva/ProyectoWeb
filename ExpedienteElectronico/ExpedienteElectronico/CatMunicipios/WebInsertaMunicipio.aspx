@@ -25,7 +25,7 @@
     <br />
      <div class="container" >
       
-    <h3>Nuevo Registros | Municipio  del Estado ID: <asp:Label ID="lblID" runat="server" Text="Label"></asp:Label></h3> 
+    <h3>Nuevo Registros | Municipio  del Estado ID : <asp:Label ID="lblID" runat="server" Text="Label"></asp:Label></h3> 
               
          <div class="form-group">
            <asp:Label ID="lblEstado"   runat="server" Text="Estado: "></asp:Label>
