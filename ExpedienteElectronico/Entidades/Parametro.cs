@@ -12,6 +12,7 @@ namespace Entidades
         ///  Creación de la entidad de parametro
         /// </summary>
         public int idParametro { get; set; }
+        public string cNombre { get; set; }
         public string cDescripcion { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaModificacion { get; set; }

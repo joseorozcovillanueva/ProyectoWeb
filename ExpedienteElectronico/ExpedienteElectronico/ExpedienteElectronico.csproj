@@ -106,6 +106,9 @@
     <Content Include="CatMunicipios\WebInsertaMunicipio.aspx" />
     <Content Include="CatMunicipios\WebModificaMunicipio.aspx" />
     <Content Include="CatMunicipios\WebMunicipio.aspx" />
+    <Content Include="CatParametro\WebInsertaParametro.aspx" />
+    <Content Include="CatParametro\WebModificaParametro.aspx" />
+    <Content Include="CatParametro\WebParametro.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="img\Archivo.png" />
     <Content Include="packages.config" />
@@ -221,6 +224,27 @@
     <Compile Include="CatMunicipios\WebMunicipio.aspx.designer.cs">
       <DependentUpon>WebMunicipio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CatParametro\WebInsertaParametro.aspx.cs">
+      <DependentUpon>WebInsertaParametro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatParametro\WebInsertaParametro.aspx.designer.cs">
+      <DependentUpon>WebInsertaParametro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatParametro\WebModificaParametro.aspx.cs">
+      <DependentUpon>WebModificaParametro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatParametro\WebModificaParametro.aspx.designer.cs">
+      <DependentUpon>WebModificaParametro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatParametro\WebParametro.aspx.cs">
+      <DependentUpon>WebParametro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatParametro\WebParametro.aspx.designer.cs">
+      <DependentUpon>WebParametro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -239,7 +263,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CatCarreras\" />
-    <Folder Include="CatParametro\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

@@ -13,10 +13,10 @@ namespace DAL
     {
         public int InsertaParametro(Parametro _parametro)
         {
-            var command = new SqlCommand("dbo.usp_CreaParametro", ConexionSingleton.abrirConexion());
+            var command = new SqlCommand("dbo.usp_AltaParametro", ConexionSingleton.abrirConexion());
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
-
+            command.Parameters.AddWithValue("@cNombre", _parametro.cNombre);
             command.Parameters.AddWithValue("@cDescripcion", _parametro.cDescripcion);
             command.Parameters.AddWithValue("@cValor", _parametro.cValor);
 
@@ -53,11 +53,12 @@ namespace DAL
                 while (reader.Read())
                 {
                     cat = new Parametro();
-                    cat.idParametro = (int)reader["idMunicipio"];
+                    cat.idParametro = (int)reader["idParametro"];
+                    cat.cNombre = (string)reader["cNombre"];
                     cat.cDescripcion = (string)reader["cDescripcion"];
                     cat.cValor = (string)reader["cValor"];
-                    cat.FechaCreacion = (DateTime)reader["FechaCreacion"];
-                    cat.FechaModificacion = (DateTime)reader["FechaModificacion"];
+                    cat.FechaCreacion = (DateTime)reader["dtFechaCreacion"];
+                    cat.FechaModificacion = (DateTime)reader["dtFechaModificacion"];
                     list.Add(cat);
                 }
             }
@@ -81,6 +82,7 @@ namespace DAL
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@idParametro", _parametro.idParametro);
+            command.Parameters.AddWithValue("@cNombre", _parametro.cNombre);
             command.Parameters.AddWithValue("@cDescripcion", _parametro.cDescripcion);
             command.Parameters.AddWithValue("@cValor", _parametro.cValor);
 
@@ -98,7 +100,7 @@ namespace DAL
 
         public void eliminaParametro(Parametro _parametro)
         {
-            var command = new SqlCommand("SP_EliminaMunicipio", ConexionSingleton.abrirConexion());
+            var command = new SqlCommand("SP_bajaParametro", ConexionSingleton.abrirConexion());
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
 

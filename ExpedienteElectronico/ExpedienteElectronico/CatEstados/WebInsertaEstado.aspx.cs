@@ -24,7 +24,7 @@ namespace ExpedienteElectronico.CatEstados
 
             Estado objNegocio = new Estado();
 
-            objNegocio.Nombre = txtcNombre.Text.ToUpper(); ;
+            objNegocio.Nombre = txtcNombre.Text.ToUpper();
 
             estadoNegocio.insertarEstado(objNegocio);
 
