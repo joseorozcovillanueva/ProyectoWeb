@@ -106,6 +106,7 @@
     <Content Include="CatMunicipios\WebInsertaMunicipio.aspx" />
     <Content Include="CatMunicipios\WebModificaMunicipio.aspx" />
     <Content Include="CatMunicipios\WebMunicipio.aspx" />
+    <Content Include="CatParametro\WebEliminaParametro.aspx" />
     <Content Include="CatParametro\WebInsertaParametro.aspx" />
     <Content Include="CatParametro\WebModificaParametro.aspx" />
     <Content Include="CatParametro\WebParametro.aspx" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="CatMunicipios\WebMunicipio.aspx.designer.cs">
       <DependentUpon>WebMunicipio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatParametro\WebEliminaParametro.aspx.cs">
+      <DependentUpon>WebEliminaParametro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatParametro\WebEliminaParametro.aspx.designer.cs">
+      <DependentUpon>WebEliminaParametro.aspx</DependentUpon>
     </Compile>
     <Compile Include="CatParametro\WebInsertaParametro.aspx.cs">
       <DependentUpon>WebInsertaParametro.aspx</DependentUpon>
