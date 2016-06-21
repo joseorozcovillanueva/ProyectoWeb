@@ -20,14 +20,7 @@ namespace ExpedienteElectronico.CatInstitutos
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            InstitucionNegocio institucionNegocio = new InstitucionNegocio();
-
-            Institucion objInstitucion = new Institucion();
-
-            objInstitucion.NombreInstitucion = txtcNombre.Text;
-            objInstitucion.Direccion = txtcDireccion.Text;
-
-            institucionNegocio.insertarInstitucion(objInstitucion);
+           
 
 
             Response.Redirect("WebInstitucion.aspx");
@@ -42,15 +35,35 @@ namespace ExpedienteElectronico.CatInstitutos
         protected void btnGuardar_Click1(object sender, EventArgs e)
         {
             InstitucionNegocio institucionNegocio = new InstitucionNegocio();
-
             Institucion objInstitucion = new Institucion();
+            Institucion obj = new Institucion();
 
-            objInstitucion.NombreInstitucion = txtcNombre.Text;
-            objInstitucion.Direccion = txtcDireccion.Text;
+            try
+            {
+                objInstitucion.NombreInstitucion = txtcNombre.Text;
+                objInstitucion.Direccion = txtcDireccion.Text;
+                obj = institucionNegocio.obtenerInstitucion().Find(x => x.NombreInstitucion == objInstitucion.NombreInstitucion);
 
-            institucionNegocio.insertarInstitucion(objInstitucion);
+                if (obj.NombreInstitucion != "")
+                {
+                    throw new Exception("error ya existe ese nombre de institución");
+                }
+                institucionNegocio.insertarInstitucion(objInstitucion);
+                Response.Redirect("WebInstitucion.aspx");
+            }
+            catch (Exception ex)
+            {
+                cidError.Text = ex.Message;
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append(@"<script language='text/javascript'>");
+                //sb.Append("$('#Mensaje').modal('show');");
+                sb.Append("alert('Call Successfull');");
+                sb.Append(@"</script>");
+                this.ClientScript.RegisterStartupScript(this.GetType(), "EditModalScript", sb.ToString());
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "EditModalScript", sb.ToString(), true);
+            }
 
-            Response.Redirect("WebInstitucion.aspx");
+           
         }
 
         protected void btnCancelar_Click1(object sender, EventArgs e)

@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Principal.Master" CodeBehind="WebInsertarInstitucion.aspx.cs" Inherits="ExpedienteElectronico.CatInstitutos.WebInsertarInstitucion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/jquery-2.2.4.min.js"></script>
     <style type="text/css">
         .auto-style2 {
             position: relative;
@@ -35,12 +36,33 @@
          <asp:Label ID="lblDireccion" runat="server" Text="Dirección: "></asp:Label>
          <asp:TextBox ID="txtcDireccion" CssClass="form-control" runat="server" ></asp:TextBox>
          </div>
+
+        
                  
           <div class="form-group">
            <asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click1" />
              <asp:Button ID="btnCancelar" CssClass="btn btn-danger" runat="server" Text="Cancelar" OnClick="btnCancelar_Click1" />
               </div>
          </div>
+          
+
+         <div id="Mensaje" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Error</h4>
+              </div>
+              <div class="modal-body">
+                <asp:TextBox ID="cidError" Text="Error" runat="server"></asp:TextBox>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+         </div>
+        </div>
         
        
      </form>

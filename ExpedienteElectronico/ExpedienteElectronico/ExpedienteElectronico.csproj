@@ -110,6 +110,8 @@
     <Content Include="CatParametro\WebInsertaParametro.aspx" />
     <Content Include="CatParametro\WebModificaParametro.aspx" />
     <Content Include="CatParametro\WebParametro.aspx" />
+    <Content Include="CatTipoDocumento\WebInsertaTipoDocumento.aspx" />
+    <Content Include="CatTipoDocumento\WebTipoDocumento.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="img\Archivo.png" />
     <Content Include="packages.config" />
@@ -252,6 +254,20 @@
     </Compile>
     <Compile Include="CatParametro\WebParametro.aspx.designer.cs">
       <DependentUpon>WebParametro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatTipoDocumento\WebInsertaTipoDocumento.aspx.cs">
+      <DependentUpon>WebInsertaTipoDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatTipoDocumento\WebInsertaTipoDocumento.aspx.designer.cs">
+      <DependentUpon>WebInsertaTipoDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatTipoDocumento\WebTipoDocumento.aspx.cs">
+      <DependentUpon>WebTipoDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatTipoDocumento\WebTipoDocumento.aspx.designer.cs">
+      <DependentUpon>WebTipoDocumento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

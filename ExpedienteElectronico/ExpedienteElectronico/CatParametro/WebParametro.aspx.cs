@@ -56,7 +56,7 @@ namespace ExpedienteElectronico.CatParametro
             //Get the row that contains this button
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
             Session["gvr"] = gvr;
-            //Response.Redirect("WebEliminaParametro.aspx");
+            Response.Redirect("WebEliminaParametro.aspx");
 
         }
     }

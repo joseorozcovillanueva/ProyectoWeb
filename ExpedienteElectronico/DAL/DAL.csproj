@@ -46,6 +46,7 @@
     <Compile Include="MunicipioDao.cs" />
     <Compile Include="ParametroDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoDocumentoDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

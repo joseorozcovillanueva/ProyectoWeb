@@ -23,12 +23,12 @@
                 <asp:BoundField DataField="Direccion"  HeaderText="Dirección" >
                 <ControlStyle CssClass="table table-bordered" />
                 </asp:BoundField>
-                <asp:BoundField DataField="FechaCreacion"  HeaderText="Fecha Creación" >
+                <asp:BoundField DataField="lValido"  HeaderText="Valida"  ItemStyle-Height="45px">
                 <ControlStyle CssClass="table table-bordered" />
+
+<ItemStyle Height="45px" Width="45px"></ItemStyle>
                 </asp:BoundField>
-                <asp:BoundField DataField="lValido"  HeaderText="Institucion Valida" >
-                <ControlStyle CssClass="table table-bordered" />
-                </asp:BoundField>
+              
                 <asp:TemplateField HeaderStyle-ForeColor="Black"  HeaderText="Opciones">
                     <ItemTemplate>
                         <asp:Button ID="btnEditar" runat="server" CssClass="btn btn-primary" Text="Editar"  
@@ -50,9 +50,7 @@
 
         
 
-         </div>
-
-         
+         </div>         
 
      </form>
 
