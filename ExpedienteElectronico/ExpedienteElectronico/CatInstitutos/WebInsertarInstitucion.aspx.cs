@@ -53,14 +53,20 @@ namespace ExpedienteElectronico.CatInstitutos
             }
             catch (Exception ex)
             {
-                cidError.Text = ex.Message;
-                System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                sb.Append(@"<script language='text/javascript'>");
+                //cidError.Text = ex.Message;
+                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                //sb.Append(@"<script language='text/javascript'>");
                 //sb.Append("$('#Mensaje').modal('show');");
-                sb.Append("alert('Call Successfull');");
-                sb.Append(@"</script>");
-                this.ClientScript.RegisterStartupScript(this.GetType(), "EditModalScript", sb.ToString());
+                //sb.Append("alert('Call Successfull');");
+                //sb.Append(@"</script>");
+                //this.ClientScript.RegisterStartupScript(this.GetType(), "EditModalScript", sb.ToString());
                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "EditModalScript", sb.ToString(), true);
+                
+                lblModalTitle.Text = "Validation Errors List for HP7 Citation";
+                lblModalBody.Text = "This is modal body";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                upModal.Update();
             }
 
            
@@ -69,6 +75,11 @@ namespace ExpedienteElectronico.CatInstitutos
         protected void btnCancelar_Click1(object sender, EventArgs e)
         {
             Response.Redirect("WebInstitucion.aspx");
+        }
+
+        protected void linkButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

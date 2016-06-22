@@ -13,20 +13,22 @@
     <h3>Catálogo de Instituciones <asp:Button ID="btnButtonNuevo" runat="server" CssClass="btn btn-primary" Text="+" OnClick="btnButtonNuevo_Click" /> </h3> 
          <asp:GridView ID="GridViewInstitucion"  CssClass="table table-bordered" AutoGenerateColumns="False" runat="server" >
           <Columns>
-                <asp:BoundField DataField="IdInstitucion"  HeaderText="ID" Visible="true" >
+                <asp:BoundField DataField="IdInstitucion"  HeaderText="ID" Visible="true" ItemStyle-Height="45px" >
                 <ControlStyle CssClass="table table-bordered" />
+                    <ItemStyle Width="45px"></ItemStyle>
                 </asp:BoundField>
 
                 <asp:BoundField DataField="NombreInstitucion"  HeaderText="Nombre Institución" >
                 <ControlStyle CssClass="table table-bordered" />
+                    <ItemStyle Width="305px"></ItemStyle>
                 </asp:BoundField>
                 <asp:BoundField DataField="Direccion"  HeaderText="Dirección" >
                 <ControlStyle CssClass="table table-bordered" />
+                    <ItemStyle Width="305px"></ItemStyle>
                 </asp:BoundField>
-                <asp:BoundField DataField="lValido"  HeaderText="Valida"  ItemStyle-Height="45px">
+                <asp:BoundField DataField="lValido"  HeaderText="Valida">
                 <ControlStyle CssClass="table table-bordered" />
-
-<ItemStyle Height="45px" Width="45px"></ItemStyle>
+<ItemStyle Width="45px"></ItemStyle>
                 </asp:BoundField>
               
                 <asp:TemplateField HeaderStyle-ForeColor="Black"  HeaderText="Opciones">

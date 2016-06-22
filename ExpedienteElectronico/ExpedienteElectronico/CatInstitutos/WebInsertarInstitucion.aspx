@@ -3,6 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/jquery-2.2.4.min.js"></script>
+     <script type="text/javascript">
+    function openModal() {
+        //$('#myModal').modal('show');
+        //return true;
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+        })
+    }  
+
+</script>
     <style type="text/css">
         .auto-style2 {
             position: relative;
@@ -35,37 +45,36 @@
          <div class="form-group">
          <asp:Label ID="lblDireccion" runat="server" Text="Dirección: "></asp:Label>
          <asp:TextBox ID="txtcDireccion" CssClass="form-control" runat="server" ></asp:TextBox>
-         </div>
-
-        
+         </div>       
                  
           <div class="form-group">
            <asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click1" />
              <asp:Button ID="btnCancelar" CssClass="btn btn-danger" runat="server" Text="Cancelar" OnClick="btnCancelar_Click1" />
               </div>
-         </div>
-          
+          </div> 
+         <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>         
 
-         <div id="Mensaje" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Error</h4>
-              </div>
-              <div class="modal-body">
-                <asp:TextBox ID="cidError" Text="Error" runat="server"></asp:TextBox>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              </div>
-            </div>
-         </div>
-        </div>
-        
-       
-     </form>
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"><asp:Label ID="lblModalTitle" runat="server" Text=""></asp:Label></h4>
+                    </div>
+                    <div class="modal-body">
+                        <asp:Label ID="lblModalBody" runat="server" Text=""></asp:Label>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+</div>         
+   </form>
 </asp:Content>
 
 
