@@ -13,8 +13,8 @@ namespace DAL
         /// <summary>
         /// Campo que contiene la cadena de conexión de la base de datos
         /// </summary>
-        const string sCadenaConexion = @"Data Source=DCM-INFORMA03\SQLEXPRESS;initial Catalog=ExpedienteElectronico;integrated Security=true";
-
+        //const string sCadenaConexion = @"Data Source=DCM-INFORMA03\SQLEXPRESS;initial Catalog=ExpedienteElectronico;integrated Security=true";
+        const string sCadenaConexion = @"Data Source=DTF-INFO90\SQLEXPRESS;Initial Catalog=ExpedienteElectronicoIntegrated Security=True";
         /// <summary>
         /// instrucción que realiza la conexión a la base de datos de acuerdo a la cadena previamente puesta
         /// </summary>
