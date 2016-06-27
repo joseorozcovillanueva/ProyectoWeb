@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CapturaExpediente\WebCapturaExpediente.aspx" />
     <Content Include="CatEstados\WebEliminaEstado.aspx" />
     <Content Include="CatEstados\WebEstado.aspx" />
     <Content Include="CatEstados\WebInsertaEstado.aspx" />
@@ -112,8 +113,22 @@
     <Content Include="CatParametro\WebParametro.aspx" />
     <Content Include="CatTipoDocumento\WebInsertaTipoDocumento.aspx" />
     <Content Include="CatTipoDocumento\WebTipoDocumento.aspx" />
+    <Content Include="Content\css\cssbotonesvisor.css" />
+    <Content Include="Content\css\jquery.guillotine.css" />
     <Content Include="Default.aspx" />
     <Content Include="img\Archivo.png" />
+    <Content Include="img\centrar.png" />
+    <Content Include="img\centrar25x.png" />
+    <Content Include="img\cerca.png" />
+    <Content Include="img\cerca25x.png" />
+    <Content Include="img\der.png" />
+    <Content Include="img\der25x.png" />
+    <Content Include="img\imprimir.png" />
+    <Content Include="img\imprimir25.png" />
+    <Content Include="img\izq.png" />
+    <Content Include="img\izq25x.png" />
+    <Content Include="img\menos.png" />
+    <Content Include="img\menos25x.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -136,13 +151,25 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="scripts\ajax.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery-1.11.0.min.js" />
     <Content Include="scripts\jquery-2.2.4.min.js" />
+    <Content Include="scripts\jquery.guillotine.js" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\jspdf.min.js" />
     <Content Include="scripts\npm.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapturaExpediente\WebCapturaExpediente.aspx.cs">
+      <DependentUpon>WebCapturaExpediente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapturaExpediente\WebCapturaExpediente.aspx.designer.cs">
+      <DependentUpon>WebCapturaExpediente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CatEstados\WebEliminaEstado.aspx.cs">
       <DependentUpon>WebEliminaEstado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

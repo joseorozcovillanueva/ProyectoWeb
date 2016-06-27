@@ -62,10 +62,10 @@ namespace ExpedienteElectronico.CatInstitutos
                 //this.ClientScript.RegisterStartupScript(this.GetType(), "EditModalScript", sb.ToString());
                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "EditModalScript", sb.ToString(), true);
                 
-                lblModalTitle.Text = "Validation Errors List for HP7 Citation";
-                lblModalBody.Text = "This is modal body";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                lblModalTitle.Text = "Validación";
+                lblModalBody.Text = "Error en el nombre de la institución";
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                 upModal.Update();
             }
 

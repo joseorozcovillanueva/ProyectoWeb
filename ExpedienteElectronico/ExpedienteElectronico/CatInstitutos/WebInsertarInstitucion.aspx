@@ -5,11 +5,11 @@
     <script src="../scripts/jquery-2.2.4.min.js"></script>
      <script type="text/javascript">
     function openModal() {
-        //$('#myModal').modal('show');
-        //return true;
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').focus()
-        })
+        $('#myModal').modal('show');
+        return true;
+      //  $('#myModal').on('shown.bs.modal', function () {
+      //      $('#myInput').focus()
+      //  })
     }  
 
 </script>
