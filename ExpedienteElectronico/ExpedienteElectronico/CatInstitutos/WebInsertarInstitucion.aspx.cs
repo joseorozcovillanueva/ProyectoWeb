@@ -28,8 +28,11 @@ namespace ExpedienteElectronico.CatInstitutos
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {        
+            
+            //ClientScript.RegisterClientScriptBlock(this.GetType(), "myfunction", "$(document).ready(function(){showDialog('#myModal');});", true);
             Response.Redirect("WebInstitucion.aspx");
-        
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", mensaje, true);
+
         }
 
         protected void btnGuardar_Click1(object sender, EventArgs e)
