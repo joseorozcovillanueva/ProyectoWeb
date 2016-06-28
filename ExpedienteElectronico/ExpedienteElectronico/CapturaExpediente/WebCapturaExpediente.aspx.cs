@@ -12,9 +12,10 @@ namespace ExpedienteElectronico.CapturaExpediente
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            string cimagen = "../img/7.png";
-            cimagen = "cargaImagen('" + cimagen + "');";
-           ScriptManager.RegisterStartupScript(Page, Page.GetType(), "imagen", "cargaImagen();", true);
+           // string cimagen = "../img/7.png";
+          //  cimagen = "cargaImagen('" + cimagen + "');";
+          ScriptManager.RegisterStartupScript(Page, Page.GetType(), "imagen", "cargaImagen();", true);
+            imagen1.ImageUrl = "../img/7.png";
         }
 
         protected void rotate_left_Click(object sender, EventArgs e)

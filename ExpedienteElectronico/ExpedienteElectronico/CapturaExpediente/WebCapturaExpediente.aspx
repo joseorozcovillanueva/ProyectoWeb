@@ -19,7 +19,7 @@
    <script  type="text/javascript">
         function cargaImagen() {
             var imagen = document.createElement('imgbase');
-            imagen.src = "../img/7.png";            
+            imagen.src = "../img/7.png";
         }  
    </script>
 </head>
@@ -33,7 +33,7 @@
           <div class="row">
             <div class="col-sm-4">
               <div id="imagen" style="width:55%;max-height:75%">
-                   <img id="imgbase" style="width:380px;" src="../img/menos25x.png" />
+                   <asp:Image ID="imagen1" runat ="server" />                   
               </div>
               <br/>
               <div id='controls'>
