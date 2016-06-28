@@ -4,6 +4,12 @@
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/jquery-2.2.4.min.js"></script>
      <script type="text/javascript">
+         function showDialog(id) {
+             $(id).dialog({
+                 modal: true, minWidth: 600
+             });             
+             $(id).parent().appendTo($("form:first"));
+         }
     function openModal() {
         $('#myModal').modal('show');
         return true;
