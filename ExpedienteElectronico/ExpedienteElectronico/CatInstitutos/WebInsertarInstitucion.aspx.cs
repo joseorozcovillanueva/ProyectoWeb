@@ -43,13 +43,15 @@ namespace ExpedienteElectronico.CatInstitutos
                 objInstitucion.NombreInstitucion = txtcNombre.Text;
                 objInstitucion.Direccion = txtcDireccion.Text;
                 obj = institucionNegocio.obtenerInstitucion().Find(x => x.NombreInstitucion == objInstitucion.NombreInstitucion);
-
-                if (obj.NombreInstitucion != "")
+                if (obj == null)
+                {
+                    institucionNegocio.insertarInstitucion(objInstitucion);
+                    Response.Redirect("WebInstitucion.aspx");
+                }                
+                else
                 {
                     throw new Exception("error ya existe ese nombre de institución");
-                }
-                institucionNegocio.insertarInstitucion(objInstitucion);
-                Response.Redirect("WebInstitucion.aspx");
+                }                
             }
             catch (Exception ex)
             {
@@ -65,8 +67,9 @@ namespace ExpedienteElectronico.CatInstitutos
                 lblModalTitle.Text = "Validación";
                 lblModalBody.Text = "Error en el nombre de la institución";
                 //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
-                upModal.Update();
+                string mensaje = "mensaje(" + "'Error en el nombre de la institucion'" + ");";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", mensaje, true);
+                //upModal.Update();
             }
 
            

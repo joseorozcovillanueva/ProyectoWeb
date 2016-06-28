@@ -12,6 +12,10 @@
       //  })
     }  
 
+    function mensaje(unMensaje) {
+        alert(unMensaje);
+        return false;
+    }
 </script>
     <style type="text/css">
         .auto-style2 {
