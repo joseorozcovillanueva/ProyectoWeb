@@ -30,8 +30,8 @@ namespace ExpedienteElectronico.CatInstitutos
         {
             
             //ClientScript.RegisterClientScriptBlock(this.GetType(), "myfunction", "$(document).ready(function(){showDialog('#myModal');});", true);
-            //Response.Redirect("WebInstitucion.aspx");
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal()", true);
+            Response.Redirect("WebInstitucion.aspx");
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal()", true);
 
         }
 

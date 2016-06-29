@@ -21,14 +21,38 @@ namespace ExpedienteElectronico.CatEstados
         {
 
             EstadoNegocio estadoNegocio = new EstadoNegocio();
-
             Estado objNegocio = new Estado();
+            Estado obj = new Estado();
 
-            objNegocio.Nombre = txtcNombre.Text.ToUpper();
+            try
+            {
 
-            estadoNegocio.insertarEstado(objNegocio);
+                objNegocio.Nombre = txtcNombre.Text.ToUpper();
+                if (txtcNombre.Text == "")
+                {
+                    throw new Exception("Error nombre del estado no puede estar en blanco");
+                }
 
-            Response.Redirect("WebEstado.aspx");
+                obj = estadoNegocio.obtenerEstado().Find(x => x.Nombre == objNegocio.Nombre);
+                if (obj == null)
+                {
+                    estadoNegocio.insertarEstado(objNegocio);
+                    Response.Redirect("WebEstado.aspx");
+                }
+                else
+                {
+                    throw new Exception("Error ya existe ese nombre del estado");
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                lblModalTitle.Text = "Validación";
+                lblModalBody.Text = ex.Message;                
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal();", true);
+                
+            }
+
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
