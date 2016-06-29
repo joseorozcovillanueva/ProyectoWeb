@@ -13,7 +13,6 @@
              <br />
              <form id="form1" runat="server">
                  <table>
-
                      <tr>
                          <td>
                              <asp:Label ID="lblNombre" runat="server" Text="Nombre(s): "></asp:Label>
