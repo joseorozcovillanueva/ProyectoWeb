@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Principal.Master" CodeBehind="WebInsertarInstitucion.aspx.cs" Inherits="ExpedienteElectronico.CatInstitutos.WebInsertarInstitucion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../scripts/bootstrap.min.js"></script>
-    <script src="../scripts/jquery-2.2.4.min.js"></script>
+    <link href="../Content/css/bootstrap3.3.6.min.css" rel="stylesheet" />
+    <script src="../scripts/jquery1.12.2.min.js"></script>  
+    <script src="../scripts/bootstrap3.3.6.min.js"></script>
      <script type="text/javascript">
          function showDialog(id) {
              $(id).dialog({
@@ -10,13 +11,12 @@
              });             
              $(id).parent().appendTo($("form:first"));
          }
-    function openModal() {
-        $('#myModal').modal('show');
-        return true;
-      //  $('#myModal').on('shown.bs.modal', function () {
-      //      $('#myInput').focus()
-      //  })
-    }  
+         function openModal() {
+
+             $(document).ready(function () {                 
+                     $("#myModal").modal();                 
+             });
+         }    
 
     function mensaje(unMensaje) {
         alert(unMensaje);
@@ -63,6 +63,8 @@
               </div>
           </div> 
          <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>         
+
+           
 
 <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

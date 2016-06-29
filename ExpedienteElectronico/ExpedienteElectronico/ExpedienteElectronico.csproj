@@ -113,6 +113,7 @@
     <Content Include="CatParametro\WebParametro.aspx" />
     <Content Include="CatTipoDocumento\WebInsertaTipoDocumento.aspx" />
     <Content Include="CatTipoDocumento\WebTipoDocumento.aspx" />
+    <Content Include="Content\css\bootstrap3.3.6.min.css" />
     <Content Include="Content\css\cssbotonesvisor.css" />
     <Content Include="Content\css\jquery.guillotine.css" />
     <Content Include="Default.aspx" />
@@ -155,11 +156,13 @@
     <Content Include="scripts\ajax.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\bootstrap3.3.6.min.js" />
     <Content Include="scripts\jquery-1.11.0.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\jquery-2.2.4.min.js" />
     <Content Include="scripts\jquery.guillotine.js" />
     <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\jquery1.12.2.min.js" />
     <Content Include="scripts\jspdf.min.js" />
     <Content Include="scripts\npm.js" />
     <Content Include="Web.config" />

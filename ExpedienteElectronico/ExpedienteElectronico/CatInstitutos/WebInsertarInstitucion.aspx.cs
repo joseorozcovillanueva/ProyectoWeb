@@ -27,11 +27,11 @@ namespace ExpedienteElectronico.CatInstitutos
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
-        {        
+        {
             
             //ClientScript.RegisterClientScriptBlock(this.GetType(), "myfunction", "$(document).ready(function(){showDialog('#myModal');});", true);
-            Response.Redirect("WebInstitucion.aspx");
-            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", mensaje, true);
+            //Response.Redirect("WebInstitucion.aspx");
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal()", true);
 
         }
 
@@ -45,6 +45,17 @@ namespace ExpedienteElectronico.CatInstitutos
             {
                 objInstitucion.NombreInstitucion = txtcNombre.Text;
                 objInstitucion.Direccion = txtcDireccion.Text;
+
+                if (txtcNombre.Text == "")
+                {
+                    throw new Exception("Error el nombre de la institución no puede estar en blanco");
+                }
+                if (txtcDireccion.Text == "")
+                {
+                    throw new Exception("Error la dirección de la institución no puede estar en blanco");
+                }
+
+
                 obj = institucionNegocio.obtenerInstitucion().Find(x => x.NombreInstitucion == objInstitucion.NombreInstitucion);
                 if (obj == null)
                 {
@@ -53,25 +64,17 @@ namespace ExpedienteElectronico.CatInstitutos
                 }                
                 else
                 {
-                    throw new Exception("error ya existe ese nombre de institución");
+                    throw new Exception("Error ya existe ese nombre de institución");
                 }                
             }
             catch (Exception ex)
             {
-                //cidError.Text = ex.Message;
-                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                //sb.Append(@"<script language='text/javascript'>");
-                //sb.Append("$('#Mensaje').modal('show');");
-                //sb.Append("alert('Call Successfull');");
-                //sb.Append(@"</script>");
-                //this.ClientScript.RegisterStartupScript(this.GetType(), "EditModalScript", sb.ToString());
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "EditModalScript", sb.ToString(), true);
-                
+                                
                 lblModalTitle.Text = "Validación";
-                lblModalBody.Text = "Error en el nombre de la institución";
+                lblModalBody.Text = ex.Message;
                 //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                string mensaje = "mensaje(" + "'Error en el nombre de la institucion'" + ");";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", mensaje, true);
+                //string mensaje = "mensaje(" + "'Error en el nombre de la institucion'" + ");";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal();", true);
                 //upModal.Update();
             }
 
@@ -81,6 +84,9 @@ namespace ExpedienteElectronico.CatInstitutos
         protected void btnCancelar_Click1(object sender, EventArgs e)
         {
             Response.Redirect("WebInstitucion.aspx");
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal()", true);
+            //string mensaje = "mensaje(" + "'Error en el nombre de la institucion'" + ");";
+            
         }
 
         protected void linkButton_Click(object sender, EventArgs e)
