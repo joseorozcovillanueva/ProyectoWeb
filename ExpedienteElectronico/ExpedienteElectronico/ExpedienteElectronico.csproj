@@ -95,6 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CapturaExpediente\WebCapturaExpediente.aspx" />
+    <Content Include="CatCarreras\WebCarrera.aspx" />
+    <Content Include="CatCarreras\WebEliminarCarrera.aspx" />
+    <Content Include="CatCarreras\WebInsertarCarrera.aspx" />
+    <Content Include="CatCarreras\WebModificaCarrera.aspx" />
     <Content Include="CatEstados\WebEliminaEstado.aspx" />
     <Content Include="CatEstados\WebEstado.aspx" />
     <Content Include="CatEstados\WebInsertaEstado.aspx" />
@@ -174,6 +178,34 @@
     </Compile>
     <Compile Include="CapturaExpediente\WebCapturaExpediente.aspx.designer.cs">
       <DependentUpon>WebCapturaExpediente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatCarreras\WebCarrera.aspx.cs">
+      <DependentUpon>WebCarrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatCarreras\WebCarrera.aspx.designer.cs">
+      <DependentUpon>WebCarrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatCarreras\WebEliminarCarrera.aspx.cs">
+      <DependentUpon>WebEliminarCarrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatCarreras\WebEliminarCarrera.aspx.designer.cs">
+      <DependentUpon>WebEliminarCarrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatCarreras\WebInsertarCarrera.aspx.cs">
+      <DependentUpon>WebInsertarCarrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatCarreras\WebInsertarCarrera.aspx.designer.cs">
+      <DependentUpon>WebInsertarCarrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatCarreras\WebModificaCarrera.aspx.cs">
+      <DependentUpon>WebModificaCarrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatCarreras\WebModificaCarrera.aspx.designer.cs">
+      <DependentUpon>WebModificaCarrera.aspx</DependentUpon>
     </Compile>
     <Compile Include="CatEstados\WebEliminaEstado.aspx.cs">
       <DependentUpon>WebEliminaEstado.aspx</DependentUpon>
@@ -324,9 +356,7 @@
       <DependentUpon>FomularioUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CatCarreras\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{47644efb-2ccf-4cb5-a120-7f80d417c938}</Project>
