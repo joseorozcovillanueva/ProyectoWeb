@@ -33,5 +33,10 @@ namespace ExpedienteElectronico.CapturaExpediente
             //     append('<img id=\'miImagen\' src=\'/imagenes/yoda.png\' class=\'miClase\' />')
             //   ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#fit').click(function () { picture.guillotine('fit'); });", true);
         }
+
+        protected void rotate_left_Click1(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "rotarIzquierda()", true);
+        }
     }
 }

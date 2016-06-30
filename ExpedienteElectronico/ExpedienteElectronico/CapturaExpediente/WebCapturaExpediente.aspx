@@ -1,9 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Principal.Master" CodeBehind="WebCapturaExpediente.aspx.cs" Inherits="ExpedienteElectronico.CapturaExpediente.WebCapturaExpediente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">  
-
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="../Content/css/bootstrap.css" rel="stylesheet" />
     <script src="../scripts/jquery.min.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
@@ -14,8 +11,38 @@
     <script src="../scripts/jquery.guillotine.js"></script>
     <link href="../Content/css/cssbotonesvisor.css" rel="stylesheet" />
     <script src="../scripts/jspdf.min.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
      <form id="form1" runat="server">
-         <script  type="text/javascript">        
+         <script  type="text/javascript">      
+             
+             function rotarIzquierda() {
+                 jQuery(function () {
+                     var picture = $('#imagen1');
+                     picture.one('load', function () {
+                         picture.guillotine({ eventOnChange: 'guillotinechange' });
+                         var data = picture.guillotine('getData');
+                         for (var key in data) { $('#' + key).html(data[key]); }
+
+                         // Bind button actions
+                         $('#rotate_left').click(function () { picture.guillotine('rotateLeft'); });
+                         $('#rotate_right').click(function () { picture.guillotine('rotateRight'); });
+                         $('#fit').click(function () { picture.guillotine('fit'); });
+                         $('#zoom_in').click(function () { picture.guillotine('zoomIn'); });
+                         $('#zoom_out').click(function () { picture.guillotine('zoomOut'); });
+                         $('#imprimir').click(function () { imprime(document.getElementById("imgbase").src); });
+
+                         // Update data on change
+                         picture.on('guillotinechange', function (ev, data, action) {
+                             data.scale = parseFloat(data.scale.toFixed(4));
+                             for (var k in data) { $('#' + k).html(data[k]); }
+                         });
+                     });
+
+                     if (picture.prop('complete')) picture.trigger('load')
+                 });
+             }
 
         function imprime(cRutaImagen) {
             var img = new Image();
@@ -28,30 +55,7 @@
             doc.output('dataurlnewwindow', {})
             //doc.save('Prueba.pdf');		
         }
-        jQuery(function () {
-            var picture = $('#imagen1');
-            picture.one('load', function () {
-                picture.guillotine({ eventOnChange: 'guillotinechange' });
-                var data = picture.guillotine('getData');
-                for (var key in data) { $('#' + key).html(data[key]); }
-
-                // Bind button actions
-                $('#rotate_left').click(function () { picture.guillotine('rotateLeft'); });
-                $('#rotate_right').click(function () { picture.guillotine('rotateRight'); });
-                $('#fit').click(function () { picture.guillotine('fit'); });
-                $('#zoom_in').click(function () { picture.guillotine('zoomIn'); });
-                $('#zoom_out').click(function () { picture.guillotine('zoomOut'); });
-                $('#imprimir').click(function () { imprime(document.getElementById("imgbase").src); });
-
-                // Update data on change
-                picture.on('guillotinechange', function (ev, data, action) {
-                    data.scale = parseFloat(data.scale.toFixed(4));
-                    for (var k in data) { $('#' + k).html(data[k]); }
-                });
-            });
-
-            if (picture.prop('complete')) picture.trigger('load')
-        });
+        
 
         window.onload = function () {
             /* Aquí la instancia a eventos desde elementos que ya
@@ -78,7 +82,9 @@
                   <button id='fit'          type='button' class='centrar'   title='Ajustar Imagen'>        </button>
                   <button id='zoom_in'      type='button' class='cerca'     title='Acercar Imagen'>        </button>
                   <button id='rotate_right' type='button' class='derecha'   title='Girar a la Derecha'>    </button>
-                  <button id='imprimir'     type='button' class='imprimir'   title='Imprimir'>   </button>                  
+                  <button id='imprimir'     type='button' class='imprimir'   title='Imprimir'>   </button>   
+                  <button type="button" class="btn btn-info btn-lg" onclick="rotarIzquierda()">rotar izquierda</button>  
+                  
               </div>                 
             </div>        
             <div class="col-sm-4" style="width=20px; height=20px">    
