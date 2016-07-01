@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CapturaExpediente\WebCapturaExpediente.aspx" />
+    <Content Include="CapturaExpediente\WebGrafica.aspx" />
     <Content Include="CatCarreras\WebCarrera.aspx" />
     <Content Include="CatCarreras\WebEliminarCarrera.aspx" />
     <Content Include="CatCarreras\WebInsertarCarrera.aspx" />
@@ -161,6 +162,11 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\bootstrap3.3.6.min.js" />
+    <Content Include="scripts\Chart.Bubble.js" />
+    <Content Include="scripts\Chart.bundle.js" />
+    <Content Include="scripts\Chart.bundle.min.js" />
+    <Content Include="scripts\Chart.js" />
+    <Content Include="scripts\Chart.min.js" />
     <Content Include="scripts\jquery-1.11.0.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\jquery-2.2.4.min.js" />
@@ -178,6 +184,13 @@
     </Compile>
     <Compile Include="CapturaExpediente\WebCapturaExpediente.aspx.designer.cs">
       <DependentUpon>WebCapturaExpediente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapturaExpediente\WebGrafica.aspx.cs">
+      <DependentUpon>WebGrafica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapturaExpediente\WebGrafica.aspx.designer.cs">
+      <DependentUpon>WebGrafica.aspx</DependentUpon>
     </Compile>
     <Compile Include="CatCarreras\WebCarrera.aspx.cs">
       <DependentUpon>WebCarrera.aspx</DependentUpon>
