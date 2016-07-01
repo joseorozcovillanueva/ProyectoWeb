@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebEntidadesApp;
+using Entidades;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace WebDaoApp
+namespace DAL
 {
     public class CarreraDao
     {

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebEntidadesApp;
-using WebNegociosApp;
+using Entidades;
+using Negocio;
 
 namespace WebExpedienteElectronico
 {

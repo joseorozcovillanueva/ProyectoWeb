@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebNegociosApp;
-using WebEntidadesApp;
+using Negocio;
+using Entidades;
 
 namespace WebExpedienteElectronico
 {
@@ -73,7 +73,7 @@ namespace WebExpedienteElectronico
                 }                
             }
 
-            if (bInsertar == true) carrera.insertaCarrera(objCarrera);
+            if (bInsertar == true) carrera.insertarCarrera(objCarrera);
 
 
 
