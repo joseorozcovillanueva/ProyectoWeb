@@ -31,10 +31,12 @@
                 <li><a href="<%=Page.ResolveUrl("~/CatInstitutos/WebInstitucion.aspx") %>">Institutos</a></li>
                 <li><a href="<%=Page.ResolveUrl("~/CatCarreras/WebCarrera.aspx") %>">Carreras</a></li>
                 <li><a href="<%=Page.ResolveUrl("~/CatEstados/WebEstado.aspx") %>">Estados</a></li>            
-                <li><a href="<%=Page.ResolveUrl("~/CatParametro/WebParametro.aspx") %>">Parámetro</a></li>       
+                <li><a href="<%=Page.ResolveUrl("~/CatParametro/WebParametro.aspx") %>">Parámetro</a></li> 
+                           
                  </ul>
             </li>            
-            <li><a href="#">Registro de Usuario</a></li>            
+            <li><a href="<%=Page.ResolveUrl("~/CatPrestador/InsertarUsuario.aspx") %>">Registro de Usuario</a></li> 
+                        
           </ul>
         </div><!--/.nav-collapse -->
       </div>
