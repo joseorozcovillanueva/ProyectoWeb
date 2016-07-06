@@ -45,6 +45,7 @@
     <Compile Include="InstitucionDao.cs" />
     <Compile Include="MunicipioDao.cs" />
     <Compile Include="ParametroDao.cs" />
+    <Compile Include="PrestadorDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoDocumentoDao.cs" />
   </ItemGroup>

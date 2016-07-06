@@ -110,10 +110,16 @@
     <Content Include="CatParametro\WebInsertaParametro.aspx" />
     <Content Include="CatParametro\WebModificaParametro.aspx" />
     <Content Include="CatParametro\WebParametro.aspx" />
+    <Content Include="CatPrestador\InsertarUsuario.aspx" />
+    <Content Include="CatPrestador\WebConsultaUsuario.aspx" />
+    <Content Include="CatPrestador\WebEliminaUsuario.aspx" />
+    <Content Include="CatPrestador\WebModusuario.aspx" />
     <Content Include="CatTipoDocumento\WebInsertaTipoDocumento.aspx" />
     <Content Include="CatTipoDocumento\WebTipoDocumento.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="img\Archivo.png" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -124,6 +130,7 @@
     <Content Include="Content\css\bootstrap.min.css.map" />
     <Content Include="Content\Font\PEPSI_pl.ttf" />
     <Content Include="Principal.Master" />
+    <Content Include="json\form.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -255,6 +262,34 @@
     <Compile Include="CatParametro\WebParametro.aspx.designer.cs">
       <DependentUpon>WebParametro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CatPrestador\InsertarUsuario.aspx.cs">
+      <DependentUpon>InsertarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatPrestador\InsertarUsuario.aspx.designer.cs">
+      <DependentUpon>InsertarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatPrestador\WebConsultaUsuario.aspx.cs">
+      <DependentUpon>WebConsultaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatPrestador\WebConsultaUsuario.aspx.designer.cs">
+      <DependentUpon>WebConsultaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatPrestador\WebEliminaUsuario.aspx.cs">
+      <DependentUpon>WebEliminaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatPrestador\WebEliminaUsuario.aspx.designer.cs">
+      <DependentUpon>WebEliminaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatPrestador\WebModusuario.aspx.cs">
+      <DependentUpon>WebModusuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatPrestador\WebModusuario.aspx.designer.cs">
+      <DependentUpon>WebModusuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CatTipoDocumento\WebInsertaTipoDocumento.aspx.cs">
       <DependentUpon>WebInsertaTipoDocumento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,6 +311,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mensajes.cs" />
     <Compile Include="Principal.Master.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Principal.Master</DependentUpon>

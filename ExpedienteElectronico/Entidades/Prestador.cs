@@ -25,6 +25,8 @@ namespace Entidades
         public int Matricula { get; set; }
         public Estatus idEstatusAutorizados { get; set; }
         public Estatus idEstatusActivo { get; set; }
+        public Estado idEstado { get; set; }
+        public Municipio idMunicipio { get; set; }
 
         /// <summary>
         /// Creación del constructor de la clase prestador
