@@ -29,6 +29,7 @@
              <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                 <li><a href="<%=Page.ResolveUrl("~/CatInstitutos/WebInstitucion.aspx") %>">Institutos</a></li>
+                <li><a href="<%=Page.ResolveUrl("~/CatCarreras/WebCarrera.aspx") %>">Carreras</a></li>
                 <li><a href="<%=Page.ResolveUrl("~/CatEstados/WebEstado.aspx") %>">Estados</a></li>            
                 <li><a href="<%=Page.ResolveUrl("~/CatParametro/WebParametro.aspx") %>">Parámetro</a></li>       
                  </ul>

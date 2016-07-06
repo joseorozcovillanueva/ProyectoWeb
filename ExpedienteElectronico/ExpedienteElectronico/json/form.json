@@ -1,0 +1,7 @@
+[
+	{type: "settings", position: "label-left", labelWidth: 130, inputWidth: 170, offsetLeft: 10},
+	{type: "input", label: "Usuario:", value: "", offsetTop: 10},
+	{type: "password", label: "Contrasena:", value: ""},
+	{type: "checkbox", label: "Recordar", checked: false},
+	{type: "button", value: "Entrar", offsetLeft: 235}
+]

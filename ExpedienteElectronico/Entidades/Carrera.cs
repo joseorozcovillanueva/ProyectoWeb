@@ -14,11 +14,17 @@ namespace Entidades
         public int idCarrera { get; set; }
         public string Nombre { get; set; }
         public DateTime fechaCreacion { get; set; }
-        public bool lValido { get; set; }
+
+        public DateTime fechaModificacion { get; set; }
+
         public bool cancelado { get; set; }
 
+        public int idInstit { get; set; }
+
+        public bool lValid { get; set; }
+
         /// <summary>
-        /// Constructor default la clase carrera
+        /// Constructor de la clase carrera
         /// </summary>
         public Carrera() { }
     }

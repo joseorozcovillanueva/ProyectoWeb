@@ -27,9 +27,12 @@ namespace ExpedienteElectronico.CatInstitutos
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
-        {        
+        {
+            
+            //ClientScript.RegisterClientScriptBlock(this.GetType(), "myfunction", "$(document).ready(function(){showDialog('#myModal');});", true);
             Response.Redirect("WebInstitucion.aspx");
-        
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal()", true);
+
         }
 
         protected void btnGuardar_Click1(object sender, EventArgs e)
@@ -42,31 +45,37 @@ namespace ExpedienteElectronico.CatInstitutos
             {
                 objInstitucion.NombreInstitucion = txtcNombre.Text;
                 objInstitucion.Direccion = txtcDireccion.Text;
-                obj = institucionNegocio.obtenerInstitucion().Find(x => x.NombreInstitucion == objInstitucion.NombreInstitucion);
 
-                if (obj.NombreInstitucion != "")
+                if (txtcNombre.Text == "")
                 {
-                    throw new Exception("error ya existe ese nombre de institución");
+                    throw new Exception("Error el nombre de la institución no puede estar en blanco");
                 }
-                institucionNegocio.insertarInstitucion(objInstitucion);
-                Response.Redirect("WebInstitucion.aspx");
+                if (txtcDireccion.Text == "")
+                {
+                    throw new Exception("Error la dirección de la institución no puede estar en blanco");
+                }
+
+
+                obj = institucionNegocio.obtenerInstitucion().Find(x => x.NombreInstitucion == objInstitucion.NombreInstitucion);
+                if (obj == null)
+                {
+                    institucionNegocio.insertarInstitucion(objInstitucion);
+                    Response.Redirect("WebInstitucion.aspx");
+                }                
+                else
+                {
+                    throw new Exception("Error ya existe ese nombre de institución");
+                }                
             }
             catch (Exception ex)
             {
-                //cidError.Text = ex.Message;
-                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                //sb.Append(@"<script language='text/javascript'>");
-                //sb.Append("$('#Mensaje').modal('show');");
-                //sb.Append("alert('Call Successfull');");
-                //sb.Append(@"</script>");
-                //this.ClientScript.RegisterStartupScript(this.GetType(), "EditModalScript", sb.ToString());
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "EditModalScript", sb.ToString(), true);
-                
-                lblModalTitle.Text = "Validation Errors List for HP7 Citation";
-                lblModalBody.Text = "This is modal body";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
-                upModal.Update();
+                                
+                lblModalTitle.Text = "Validación";
+                lblModalBody.Text = ex.Message;
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                //string mensaje = "mensaje(" + "'Error en el nombre de la institucion'" + ");";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal();", true);
+                //upModal.Update();
             }
 
            
@@ -75,6 +84,9 @@ namespace ExpedienteElectronico.CatInstitutos
         protected void btnCancelar_Click1(object sender, EventArgs e)
         {
             Response.Redirect("WebInstitucion.aspx");
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openModal()", true);
+            //string mensaje = "mensaje(" + "'Error en el nombre de la institucion'" + ");";
+            
         }
 
         protected void linkButton_Click(object sender, EventArgs e)

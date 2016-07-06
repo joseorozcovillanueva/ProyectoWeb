@@ -1,0 +1,110 @@
+/*BOTONES GRANDES 42PX*/
+.derecha {
+    height: 42px;
+    width: 42px;        
+    background-image:url(../../img/der.png);
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+    border: 0px none;
+}
+
+.izquierda {
+    height: 42px;
+    width: 42px;
+    background-image: url(../../img/izq.png);
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+    border: 0px none;
+}
+
+.cerca {
+    height: 42px;
+    width: 42px;
+    background-image: url(../../img/cerca.png);
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+    border: 0px none;
+}
+
+.menos {
+    height: 42px;
+    width: 42px;
+    background-image: url(../../img/menos.png);
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+    border: 0px none;
+}
+
+.centrar {
+    height: 42px;
+    width: 42px;
+    background-image: url(../../img/centrar.png);
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+    border: 0px none;
+}
+
+.imprimir {
+    height: 42px;
+    width: 42px;
+    background-image: url(../../img/imprimir.png);    
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+    border: 0px none;
+}
+
+.procesando
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #003176;
+	font-style: normal;
+	text-decoration: none;
+}
+
+
+/*BOTONES PEQUEÑOS 25PX*/
+/*button.derecha
+{	height:25px;
+	width:25px;
+    background-image:url(../img/iconos_planos/der25x.png);
+	cursor:pointer;
+	padding:0px 0px 0px 0px;
+	border:0px none;	
+}
+
+button.izquierda
+{	height:25px;
+	width:25px;
+    background-image:url(../img/iconos_planos/izq25x.png);
+	cursor:pointer;
+	padding:0px 0px 0px 0px;
+	border:0px none;	
+}
+
+button.cerca
+{	height:25px;
+	width:25px;
+    background-image:url(../img/iconos_planos/cerca25x.png);
+	cursor:pointer;
+	padding:0px 0px 0px 0px;
+	border:0px none;	
+}
+
+button.menos
+{	height:25px;
+	width:25px;
+    background-image:url(../img/iconos_planos/menos25x.png);
+	cursor:pointer;
+	padding:0px 0px 0px 0px;
+	border:0px none;	
+}
+
+button.centrar
+{	height:25px;
+	width:25px;
+    background-image:url(../img/iconos_planos/centrar25x.png);
+	cursor:pointer;
+	padding:0px 0px 0px 0px;
+	border:0px none;	
+}*/
