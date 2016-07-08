@@ -20,14 +20,14 @@ namespace DAL
 
             command.Parameters.AddWithValue("@cNombre", _Prestador.Nombre);
             command.Parameters.AddWithValue("@cApellidoPaterno", _Prestador.ApellidoPat);
-            command.Parameters.AddWithValue("@cApellidoMaterno", _Prestador.ApellidoPat);
+            command.Parameters.AddWithValue("@cApellidoMaterno", _Prestador.ApellidoMat);
             command.Parameters.AddWithValue("@cCelular", _Prestador.celular);
             command.Parameters.AddWithValue("@cEmail", _Prestador.eMail);
             command.Parameters.AddWithValue("@cDomicilio", _Prestador.domicilio);
             command.Parameters.AddWithValue("@cPassword", _Prestador.password);
             command.Parameters.AddWithValue("@iMatricula", _Prestador.Matricula);
-            command.Parameters.AddWithValue("@nidInstitucion", _Prestador.idInstitucion);
-            command.Parameters.AddWithValue("@@nidCarrera", _Prestador.idCarrera);
+            command.Parameters.AddWithValue("@nidInstitucion", 1);
+            command.Parameters.AddWithValue("@nidCarrera", 1);
             command.Parameters.AddWithValue("@nidEstado", _Prestador.idEstado);
             command.Parameters.AddWithValue("@nidMunicipio", _Prestador.idMunicipio);
 
@@ -35,9 +35,15 @@ namespace DAL
             {
                 folio = (int)command.ExecuteScalar();
             }
+            catch (SqlException ex)
+            {
+                throw new Exception("SQl Error en obtener los datos de modelos" + ex.Message);
+                
+            }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Code Error AltaUsuario en obtener los datos de modelos   " + ex.Message);
+                
             }
 
             ConexionSingleton.cerrarConexion();

@@ -19,14 +19,20 @@ namespace Entidades
         public string eMail { get; set; }
         public string domicilio { get; set; }
         public string password { get; set; }
-        public Institucion idInstitucion { get; set; }
-        public Carrera idCarrera { get; set; }
+        //public Institucion idInstitucion { get; set; }
+
+        public int idInstitucion { get; set; }
+
+        public int idCarrera { get; set; }
+        //public Carrera idCarrera { get; set; }
         public int horasAsignadas { get; set; }
         public int Matricula { get; set; }
+        public int idMunicipio { get; set; }
+        public int idEstado { get; set; }
         public Estatus idEstatusAutorizados { get; set; }
         public Estatus idEstatusActivo { get; set; }
-        public Estado idEstado { get; set; }
-        public Municipio idMunicipio { get; set; }
+        //public Estado idEstado { get; set; }
+        //public Municipio idMunicipio { get; set; }
 
         /// <summary>
         /// Creación del constructor de la clase prestador
