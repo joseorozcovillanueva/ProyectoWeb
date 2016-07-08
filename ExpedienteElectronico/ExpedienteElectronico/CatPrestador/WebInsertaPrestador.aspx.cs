@@ -142,7 +142,8 @@ namespace ExpedienteElectronico.CatPrestador
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Mensajes.Msjs(this, "Error", "CancelaTODO");
+           // Mensajes.Msjs(this, "Error", "CancelaTODO");
+            Response.Redirect(Page.ResolveUrl("~/Default.aspx"));
         }
         protected void CargaEstado()
         {
@@ -167,7 +168,7 @@ namespace ExpedienteElectronico.CatPrestador
                     DropListInst.DataValueField = "idInstitucion";
                     DropListInst.DataTextField = "NombreInstitucion";
                     DropListInst.DataBind();
-
+                    // catalogo pendiente de carrera
                    /* CarreraNegocio objCarBE = new CarreraNegocio();
                     DropListCarrera.DataSource = objCarBE.ConsultaInsenCarrera(Convert.ToInt32(DropListInst.SelectedValue.ToString()));
                     DropListCarrera.DataValueField = "idCarrera";
