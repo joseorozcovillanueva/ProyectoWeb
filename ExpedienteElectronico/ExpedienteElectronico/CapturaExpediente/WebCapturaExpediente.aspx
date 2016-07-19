@@ -20,23 +20,26 @@
     <script src="../scripts/Chart.js"></script>
     <script src="../scripts/Chart.min.js"></script>    
     <script src="../scripts/jspdf.min.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+    
 </head>
 
 <body>  
      <form id="form1" runat="server">         
 
      <div >
-          <div class="jumbotron">   
+          <div>   
              <div class="row" >
                  <div class="col-sm-4">
-                   <div id="canvas-holder" style="width:50%">
-                        <canvas id="chart-area" width="200" height="200" />
-                   </div>
-                   <div style="width:50%">
-                      <button id="randomizeData">Randomize Data</button>
-                      <button id="addDataset">Add Dataset</button>
-                      <button id="removeDataset">Remove Dataset</button>
-                   </div>            
+                   <div id="container" style="width:75%">
+                        <canvas id="chart-area"> </canvas>
+                   </div>                       
                 </div>
                  <div class="col-sm-4">    
                      <p>mensajes</p>
@@ -75,20 +78,16 @@
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                      <img src="../img/Archivo.png" alt="Chania">
+                        <img src="../img/cedulaCatastro.png" />                      
                     </div>
 
                     <div class="item">
-                      <img src="../img/centrar.png" alt="Chania">
+                        <img src="../img/Manifiesto.png" />
                     </div>
 
                     <div class="item">
-                      <img src="../img/cerca.png" alt="Flower">
-                    </div>
-
-                    <div class="item">
-                      <img src="../img/der.png" alt="Flower">
-                    </div>
+                        <img src="../img/plano.png" />
+                    </div>                   
                   </div>
 
                   <!-- Left and right controls -->
@@ -101,9 +100,8 @@
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-              <h3>Column 3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              <h4>Tipos de Archivo</h4>
+              <p>Seleccionar el tipo de archivo requerido</p>              
             </div>
           </div>
         </div>
@@ -112,9 +110,7 @@
      </body>
     <script  type="text/javascript">              
              
-             function rotarIzquierda() {
-                 
-             }
+     
 
         function imprime(cRutaImagen) {
             var img = new Image();
@@ -152,78 +148,68 @@
 
             if (picture.prop('complete')) picture.trigger('load')
         });
-        window.onload = function () {
-            /* Aquí la instancia a eventos desde elementos que ya
-               están cargados dentro de la página */
-            $('#fit').trigger('click');
 
-        }
+        $(document).ready(function () {
+            $("#fit").trigger('click');
+        });
+            window.onload = function () {
+                /* Aquí la instancia a eventos desde elementos que ya
+                   están cargados dentro de la página */
+
+                $(document).ready(function () {
+                    $("#fit").trigger('click');
+                });
+
+            }
+        
+
     </script>
      <script>
+         var MONTHS = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
          var randomScalingFactor = function () {
-             return Math.round(Math.random() * 100);
+             return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
          };
          var randomColorFactor = function () {
              return Math.round(Math.random() * 255);
          };
-         var randomColor = function (opacity) {
-             return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+         var randomColor = function () {
+             return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
          };
-         var config = {
-             type: 'pie',
-             data: {
-                 datasets: [{
-                     data: [
-                         randomScalingFactor(),
-                         randomScalingFactor(),
-                         randomScalingFactor(),
-                         randomScalingFactor(),
-                         randomScalingFactor(),
-                     ],
-                     backgroundColor: [
-                         "#F7464A",
-                         "#46BFBD",
-                         "#FDB45C",
-                         "#949FB1",
-                         "#4D5360",
-                     ],
-                 }],
-                 labels: [
-                     "R",
-                     "G",
-                     "Y",
-                     "G",
-                     "D"
-                 ]
-             },
-             options: {
-                 responsive: true
-             }
+         var barChartData = {
+             labels: ["Enero", "Febrero", "Marzo"],
+             datasets: [{
+                 label: 'Capturados',
+                 backgroundColor: "rgba(220,220,220,0.5)",
+                 data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+
+             }]
          };
+
          window.onload = function () {
              var ctx = document.getElementById("chart-area").getContext("2d");
-             window.myPie = new Chart(ctx, config);
-         };
-         $('#randomizeData').click(function () {
-             $.each(config.data.datasets, function (i, piece) {
-                 $.each(piece.data, function (j, value) {
-                     config.data.datasets[i].data[j] = randomScalingFactor();
-                     config.data.datasets[i].backgroundColor[j] = randomColor(0.7);
-                 });
+             window.myBar = new Chart(ctx, {
+                 type: 'bar',
+                 data: barChartData,
+                 options: {
+                     // Elements options apply to all of the options unless overridden in a dataset
+                     // In this case, we are setting the border of each bar to be 2px wide and green
+                     elements: {
+                         rectangle: {
+                             borderWidth: 2,
+                             borderColor: 'rgb(0, 255, 0)',
+                             borderSkipped: 'bottom'
+                         }
+                     },
+                     responsive: true,
+                     legend: {
+                         position: 'top',
+                     },
+                     title: {
+                         display: true,
+                         text: 'Gráfica de Barra'
+                     }
+                 }
              });
-             window.myPie.update();
-         });
-         $('#addDataset').click(function () {
-             var newDataset = {
-                 backgroundColor: [randomColor(0.7), randomColor(0.7), randomColor(0.7), randomColor(0.7), randomColor(0.7)],
-                 data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-             };
-             config.data.datasets.push(newDataset);
-             window.myPie.update();
-         });
-         $('#removeDataset').click(function () {
-             config.data.datasets.splice(0, 1);
-             window.myPie.update();
-         });
+         };
      </script>
 </html>

@@ -17,6 +17,7 @@ namespace ExpedienteElectronico.CapturaExpediente
           //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "imagen", "cargaImagen();", true);
             imagen1.ImageUrl = "../img/9.tif";
             imagen1.Visible = true;
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", " $(document).ready(function () {$('#fit').trigger('click');});", true);
         }
 
         protected void rotate_left_Click(object sender, EventArgs e)
